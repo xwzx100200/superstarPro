@@ -6,14 +6,9 @@ import (
 	"superstartPro/superstar/web/routes"
 )
 
-func newApp() *bootstrap.Bootstrapper {
+func main() {
 	app := bootstrap.New("Superstar database", "一凡Sir")
 	app.Bootstrap()
 	app.Configure(identity.Configure, routes.Configure)
-	return app
-}
-
-func main() {
-	app := newApp()
-	app.Listen(":8080")
+	app.Listen(":8081")
 }

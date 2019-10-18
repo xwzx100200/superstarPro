@@ -8,7 +8,6 @@ Example:
 import (
     "github.com/kataras/iris/_examples/mvc/login/datamodels"
 
-    "github.com/kataras/iris"
     "github.com/kataras/iris/context"
 )
 
@@ -42,7 +41,7 @@ so theoretically, something like the following is permitted if it's really neces
 // This is called where the return value from a controller's method functions
 // is type of `User`.
 // For example the `controllers/user_controller.go#GetBy`.
-func (m User) Dispatch(ctx iris.Context) {
+func (m User) Dispatch(ctx context.Context) {
     if !m.IsValid() {
         ctx.NotFound()
         return
